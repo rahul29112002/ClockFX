@@ -1,4 +1,3 @@
-package main;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -23,34 +22,39 @@ public class Main extends Application {
     Text times = new Text();
 
     @Override
-    public void start(Stage primaryStage) {
-        Scene scene = new Scene(getGrid(),555,240);
+    public void start(Stage stage) {
+        Scene scene = new Scene(getGrid(), 620, 230);
         scene.setFill(Color.BLACK);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("Le Digital Clock");
-        primaryStage.show();
+        stage.setMaxHeight(230);
+        stage.setMaxWidth(620);
+        stage.setMinHeight(230);
+        stage.setMinWidth(620);
+        stage.setScene(scene);
+        stage.setTitle("Le Digital Clock");
+        stage.show();
     }
 
     private GridPane getGrid() {
         setTexts();
         GridPane grid = new GridPane();
         grid.add(times, 0, 0);
+        grid.setAlignment(Pos.CENTER);
         return grid;
     }
 
     private void setTexts() {
         bindToTime();
-        times.setFont(Font.font("Segoe UI",150));
+        times.setFont(Font.font("Digital-7 Mono", 150));
         times.setFill(Color.GREENYELLOW);
         times.setTextAlignment(TextAlignment.CENTER);
     }
 
     private void bindToTime() {
-        DateTimeFormatter SHORT_TIME_FORMATTER = DateTimeFormatter.ofPattern("HH:mm:ss");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0), new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                setText(LocalTime.now().format(SHORT_TIME_FORMATTER));
+                setText(LocalTime.now().format(dtf));
             }
 
             private void setText(String format) {
