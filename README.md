@@ -1,9 +1,9 @@
 <style>
 h1 {
-  font-face : "Helvetica";
+  font-family : "Helvetica";
 }
 p {
-  font-face : "Helvetica";
+  font-family : "Helvetica";
 }
 </style>
 <h1>Clock FX<h1>
