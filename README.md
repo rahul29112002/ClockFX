@@ -1,11 +1,4 @@
-<style>
-h1 {
-  font-family : "Helvetica";
-}
-p {
-  font-family : "Helvetica";
-}
-</style>
+
 <h1>Clock FX<h1>
 <br>
 <p>
