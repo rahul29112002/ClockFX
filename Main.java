@@ -17,7 +17,7 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class Main extends Application {
+public class ClockFX extends Application {
 
     Text times = new Text();
 
